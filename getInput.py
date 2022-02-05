@@ -13,15 +13,15 @@ def check():
         with open(f"./{fileName}", 'w', newline='') as file:
             print(f"File not found. Making new file.\n")
 
+        # Determines if file contains existing questions and choices
+        with open(f"./{fileName}", 'r', newline='') as file:    
+            reader = csv.reader(file)
+            numLines = len(list(reader))
+            return numLines
     
-    print("File Located!")
-
-    # Determines if file contains existing questions and choices
-    with open(f"./{fileName}", 'r', newline='') as file:    
-        reader = csv.reader(file)
-        numLines = len(list(reader))
-        # print(numLines)
-        return numLines
+    else:
+        print("File cannot be modified!")
+        return -1
     
 
 # Asks user for inputs
@@ -33,6 +33,11 @@ def grabInput():
     headercount = []
 
     checkingFile = check()
+
+    if checkingFile == -1:
+        return 0
+    
+    # print(checkingFile)
 
     # Gets the question number and stores it to headercount. Keeps track on what question number was the last
     if checkingFile != 0:
@@ -78,6 +83,7 @@ def grabInput():
                         choicenum += 1
                     else:
                         print("Already included")
+            
         rows.append(data)
         count += 1
 
