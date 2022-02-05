@@ -1,0 +1,4 @@
+number,category,choice1,choice1-count,choice2,choice2-count,choice3,choice3-count,choice4,choice4-count
+Question 1,PRESIDENT CHOICE,LENI,0,ISKO,0,PACMAN,0,BBM,1
+Question 2,LAPTOP BRAND,HP,0,ASUS,0,MAC,1,ACER,0
+Question 3,PHONE,VIVO,1,SAMSUNG,0,ASUS,0,APPLE,0

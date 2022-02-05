@@ -1,7 +1,7 @@
 from getInput import grabInput
 from getVotes import startVoting
 
-data = {}
+# data = {}
 def queue():
     answer = input("[a] Add Questions\n[b] Vote\n[x] Exit\n\nAnswer: ").strip().upper()
     if answer == 'A' or answer == 'B' or answer == "X":
@@ -10,11 +10,11 @@ def queue():
         print("Input not found!\n")
         return queue()
 
-def getQuestions():
-    grabInput()
+# def getQuestions():
+#     grabInput()
 
-def getVotes():
-    startVoting()                    
+# def getVotes():
+#     startVoting()                    
 
 # def storeVotes(data):
 #     pass
@@ -23,10 +23,10 @@ def main():
     selected = queue()
 
     if selected == 'A':
-        getQuestions()
+        grabInput()
     
     elif selected == 'B':
-        getVotes()
+        startVoting()  
         # storeVotes(data)
         # print(data)
     

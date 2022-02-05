@@ -31,7 +31,7 @@ def startVoting():
         for i in reader:
             counter = 1
             print(f'\n{i["number"]}: {i["category"]}')
-            for j in range(numLines-2):
+            for j in range(numLines):
                 if i[f"choice{counter}"] != "":
                     print(f'[{counter}] {i[f"choice{counter}"]}')
                     counter+=1
@@ -43,7 +43,7 @@ def startVoting():
             counterCount = 1
             data["number"] = i["number"] 
             data["category"] = i["category"]
-            for k in range(numLines-2):
+            for k in range(numLines):
                 if i[f"choice{counter}"] != "":
                     data[f"choice{counter}"] = i[f"choice{counter}"]
                     counter += 1
