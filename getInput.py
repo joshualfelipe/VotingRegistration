@@ -5,8 +5,14 @@ fileName = "texts.csv"
 
 # Function checks if file exists in the said directory.
 def check():
-    os.chdir("./Voter Registration P2")
+    # print(os.getcwd())
+    
+    if os.getcwd()[-1] != "2":
+        # print(os.getcwd()[-1])
+        # print("Im here")
+        os.chdir("./Voter Registration P2")
     fileExists = os.path.isfile(f"./{fileName}")
+    
 
     # Creates a new file if file does not exist
     if not fileExists:
@@ -60,7 +66,7 @@ def grabInput():
             break
         else:
             data = {}
-            print(data)
+            # print(data)
             if count not in headercount:
                 data["number"] = f"Question {count}"
             else: 
@@ -98,4 +104,4 @@ def grabInput():
             writer = csv.DictWriter(file, fieldnames=header)
             writer.writerows(rows)
 
-grabInput()
+# grabInput()

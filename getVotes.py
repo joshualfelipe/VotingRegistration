@@ -11,8 +11,15 @@ numLines = (numLines/2)-1
 fileName = "texts.csv"
 
 def startVoting():
-    os.chdir("./Voter Registration P2")
+    
+    # print(os.getcwd())
+    
+    if os.getcwd()[-1] != "2":
+        # print(os.getcwd()[-1])
+        # print("Im here")
+        os.chdir("./Voter Registration P2")
     fileExists = os.path.isfile(f"./{fileName}")
+    
 
     with open(f"./{fileName}") as file:
         readheader = csv.reader(file)
@@ -77,4 +84,4 @@ def startVoting():
         writer.writeheader()
         writer.writerows(mainData)
 
-startVoting() 
+# startVoting() 
