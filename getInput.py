@@ -34,7 +34,7 @@ def grabInput():
 
     checkingFile = check()
 
-
+    # Gets the question number and stores it to headercount. Keeps track on what question number was the last
     if checkingFile != 0:
         with open(f"./{fileName}") as file:    
             readerC = csv.reader(file)
