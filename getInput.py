@@ -108,4 +108,4 @@ def grabInput():
             writer = csv.DictWriter(file, fieldnames=header)
             writer.writerows(rows)
 
-grabInput()
+# grabInput()
