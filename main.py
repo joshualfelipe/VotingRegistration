@@ -23,8 +23,6 @@ def main(fileName):
     
     return 1
 
-            
-
 if __name__ == '__main__':
     while True:
         ask = input("Enter Filename: ").strip()
