@@ -8,9 +8,6 @@ def startVoting(fileName):
     # Initialize needed variables
     header = ["number","category"]
     mainData = []
-
-    # numLines = 0
-    # numLines = (numLines/2)-1
     
     # print(os.getcwd())
     
@@ -22,10 +19,6 @@ def startVoting(fileName):
 
     # Checks  if file exist
     fileExists = os.path.isfile(f"./{fileName}")
-
-    with open(f"./{fileName}") as file:
-        readheader = csv.reader(file)
-        numLines = len(list(readheader))
     
     # Appends the number of header choice and choice counts.
     # Makes header choice number and choice counter. This fixes the bug when adding new question to existing file, it automatically adds a specific number of blank/columns/commas.
@@ -94,7 +87,7 @@ def startVoting(fileName):
         print("file not found")
 
     sleep(1)
-    
+
     with open(f"./{fileName}", 'w', encoding='UTF8', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=header)
         writer.writeheader()
