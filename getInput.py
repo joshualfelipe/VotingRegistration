@@ -9,10 +9,10 @@ import os.path
 def check(fileName):
     # print(os.getcwd())
     
-    if os.getcwd()[-1] != "2":
+    # if os.getcwd()[-1] != "2":
         # print(os.getcwd()[-1])
         # print("Im here")
-        os.chdir("./Voter Registration P2")
+        # os.chdir("./Voter Registration P2")
     fileExists = os.path.isfile(f"./{fileName}")
     
 
