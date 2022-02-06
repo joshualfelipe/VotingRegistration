@@ -1,7 +1,6 @@
 from getInput import grabInput
 from getVotes import startVoting
 
-# data = {}
 def queue():
     answer = input("[a] Add Questions\n[b] Vote\n[x] Exit\n\nAnswer: ").strip().upper()
     if answer == 'A' or answer == 'B' or answer == "X":
@@ -10,26 +9,14 @@ def queue():
         print("Input not found!\n")
         return queue()
 
-# def getQuestions():
-#     grabInput()
-
-# Unneccesary comment
-# def getVotes():
-#     startVoting()                    
-
-# def storeVotes(data):
-#     pass
-
-def main():
+def main(fileName):
     selected = queue()
 
     if selected == 'A':
-        grabInput()
+        grabInput(fileName)
     
     elif selected == 'B':
-        startVoting()  
-        # storeVotes(data)
-        # print(data)
+        startVoting(fileName)  
     
     elif selected == "X":
         return 0
@@ -39,8 +26,9 @@ def main():
             
 
 if __name__ == '__main__':
+    ask = input("Enter Filename\n\nAnswer: ").strip()
     while True:
-        task = main()
+        task = main(ask)
         print()
         if task == 0:
             print("You exited")

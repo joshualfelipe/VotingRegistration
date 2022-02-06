@@ -3,10 +3,10 @@
 import csv
 import os.path
 
-fileName = "texts.csv"
+# fileName = "texts.csv"
 
 # Function checks if file exists in the said directory.
-def check():
+def check(fileName):
     # print(os.getcwd())
     
     if os.getcwd()[-1] != "2":
@@ -33,14 +33,14 @@ def check():
     
 
 # Asks user for inputs
-def grabInput():
+def grabInput(fileName):
 
     # Initialized variables
     header = ["number","category"]
     rows = []
     headercount = []
 
-    checkingFile = check()
+    checkingFile = check(fileName)
 
     # if checkingFile == -1:
     #     print("RUnning")

@@ -2,9 +2,9 @@ import csv
 import os
 from time import sleep
 
-fileName = "texts.csv"
+# fileName = "texts.csv"
 
-def startVoting():
+def startVoting(fileName):
     header = ["number","category"]
     mainData = []
     numLines = 0
