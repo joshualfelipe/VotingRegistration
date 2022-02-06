@@ -1,4 +1,4 @@
-number,category,choice1,choice1-count,choice2,choice2-count,choice3,choice3-count,choice4,choice4-count
-Question 1,PRESIDENT CHOICE,LENI,0,ISKO,0,PACMAN,0,BBM,1
-Question 2,LAPTOP BRAND,HP,0,ASUS,0,MAC,1,ACER,0
-Question 3,PHONE,VIVO,1,SAMSUNG,0,ASUS,0,APPLE,0
+number,category,choice1,choice1-count,choice2,choice2-count,choice3,choice3-count,choice4,choice4-count,choice5,choice5-count,choice6,choice6-count,choice7,choice7-count,choice8,choice8-count,choice9,choice9-count,choice10,choice10-count,choice11,choice11-count,choice12,choice12-count,choice13,choice13-count,choice14,choice14-count,choice15,choice15-count
+Question 1,TESTING,1,0,2,0,3,0,,,,,,,,,,,,,,,,,,,,,,,,
+Question 2,1,2,0,3,0,4,0,,,,,,,,,,,,,,,,,,,,,,,,
+Question 3,TESTING,12,0,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,

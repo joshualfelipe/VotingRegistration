@@ -21,15 +21,15 @@ def check():
         with open(f"./{fileName}", 'w', newline='') as file:
             print(f"File not found. Making new file.\n")
 
-        # Determines if file contains existing questions and choices
-        with open(f"./{fileName}", 'r', newline='') as file:    
-            reader = csv.reader(file)
-            numLines = len(list(reader))
-            return numLines
+    # Determines if file contains existing questions and choices
+    with open(f"./{fileName}", 'r', newline='') as file:    
+        reader = csv.reader(file)
+        numLines = len(list(reader))
+        return numLines
     
-    else:
-        print("File cannot be modified!")
-        return -1
+    # else:
+    #     print("File cannot be modified!")
+    #     return -1
     
 
 # Asks user for inputs
@@ -42,8 +42,8 @@ def grabInput():
 
     checkingFile = check()
 
-    if checkingFile == -1:
-        return 0
+    # if checkingFile == -1:
+    #     print("RUnning")
     
     # print(checkingFile)
 
@@ -57,6 +57,11 @@ def grabInput():
                     headercount.append(int(row[0][:-3:-1][::-1]))
                 else:
                     headercount.append(int(row[0][-1]))
+
+    # if checkingFile == 0:
+    for num in range(1,16):
+        header.append(f"choice{num}")
+        header.append(f"choice{num}-count")
 
     count = 1
     while True:
@@ -85,9 +90,6 @@ def grabInput():
                         choices.append(choice)
                         data[f"choice{choicenum}"] = choice
                         data[f"choice{choicenum}-count"] = 0
-                        if f"choice{choicenum}" not in header and f"choice{choicenum}-count" not in header:
-                            header.append(f"choice{choicenum}")
-                            header.append(f"choice{choicenum}-count")
                         choicenum += 1
                     else:
                         print("Already included")
@@ -106,4 +108,4 @@ def grabInput():
             writer = csv.DictWriter(file, fieldnames=header)
             writer.writerows(rows)
 
-# grabInput()
+grabInput()
