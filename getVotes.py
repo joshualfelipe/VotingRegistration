@@ -25,16 +25,23 @@ def startVoting():
         readheader = csv.reader(file)
         numLines = len(list(readheader))
 
+    for num in range(1,16):
+        header.append(f"choice{num}")
+        header.append(f"choice{num}-count")
+
     with open(f"./{fileName}", newline="") as file:
         reader = csv.DictReader(file)
         
         for i in reader:
             counter = 1
             print(f'\n{i["number"]}: {i["category"]}')
-            for j in range(numLines):
+            print(numLines)
+            for j in range(1,16):
                 if i[f"choice{counter}"] != "":
                     print(f'[{counter}] {i[f"choice{counter}"]}')
                     counter+=1
+                else:
+                    break
             
             data = {}
 
@@ -43,17 +50,13 @@ def startVoting():
             counterCount = 1
             data["number"] = i["number"] 
             data["category"] = i["category"]
-            for k in range(numLines):
+            for k in range(1,16):
                 if i[f"choice{counter}"] != "":
                     data[f"choice{counter}"] = i[f"choice{counter}"]
                     counter += 1
                 if i[f"choice{counterCount}-count"] != "":
                     data[f"choice{counterCount}-count"] = int(i[f"choice{counterCount}-count"])
                     counterCount+=1
-                if f"choice{choicenum}" not in header and f"choice{choicenum}-count" not in header:
-                        header.append(f"choice{choicenum}")
-                        header.append(f"choice{choicenum}-count")
-                        choicenum += 1
 
             isVoteGood = False
             while isVoteGood == False:   
@@ -84,4 +87,4 @@ def startVoting():
         writer.writeheader()
         writer.writerows(mainData)
 
-# startVoting() 
+startVoting() 
