@@ -68,7 +68,7 @@ def grabInput(fileName):
         # print(headercount)
         choicenum = 1
         print()
-        question = input("Enter the question: ").strip().upper()
+        question = input("Enter the question [Leave blank if no additional question]: ").strip().upper()
         if question == "" or question == 'NONE':
             break
         else:
@@ -82,7 +82,7 @@ def grabInput(fileName):
             data["category"] = question
             choices = []
             while True:
-                choice = input("Enter choice: ").strip().upper()
+                choice = input("Enter choice [Leave blank if no additional choice]: ").strip().upper()
                 if choice == "" or choice == 'NONE':
                     break
                 else:
@@ -97,8 +97,8 @@ def grabInput(fileName):
         rows.append(data)
         count += 1
 
-    answer = input("Is there a header already? ").strip().upper()
-    if answer == "NO":
+    answer = input("Is this a new file?[y/n] ").strip().upper()
+    if answer == "Y":
         with open(f"./{fileName}", 'w', newline='') as file:
             writer = csv.DictWriter(file, fieldnames=header)
             writer.writeheader()

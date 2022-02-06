@@ -33,7 +33,7 @@ def startVoting(fileName):
         for i in reader:
             counter = 1
             print(f'\n{i["number"]}: {i["category"]}')
-            print(numLines)
+            # print(numLines)
             for j in range(1,16):
                 if i[f"choice{counter}"] != "":
                     print(f'[{counter}] {i[f"choice{counter}"]}')
@@ -79,7 +79,7 @@ def startVoting(fileName):
     else:
         print("file not found")
 
-    sleep(2)
+    sleep(1)
     with open(f"./{fileName}", 'w', encoding='UTF8', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=header)
         writer.writeheader()
