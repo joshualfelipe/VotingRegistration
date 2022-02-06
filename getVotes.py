@@ -2,15 +2,13 @@ import csv
 import os
 from time import sleep
 
-
-header = ["number","category"]
-mainData = []
-numLines = 0
-numLines = (numLines/2)-1
-
 fileName = "texts.csv"
 
 def startVoting():
+    header = ["number","category"]
+    mainData = []
+    numLines = 0
+    numLines = (numLines/2)-1
     
     # print(os.getcwd())
     
@@ -24,7 +22,7 @@ def startVoting():
     with open(f"./{fileName}") as file:
         readheader = csv.reader(file)
         numLines = len(list(readheader))
-
+    
     for num in range(1,16):
         header.append(f"choice{num}")
         header.append(f"choice{num}-count")
