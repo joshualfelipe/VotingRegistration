@@ -87,4 +87,4 @@ def startVoting():
         writer.writeheader()
         writer.writerows(mainData)
 
-startVoting() 
+# startVoting() 
